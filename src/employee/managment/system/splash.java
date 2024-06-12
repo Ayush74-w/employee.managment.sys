@@ -31,6 +31,5 @@ try{
 
     public static void main(String args[]) {
         new splash();
-        int a;
     }
 }

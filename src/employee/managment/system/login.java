@@ -4,8 +4,12 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 
 import javax.swing.*;
+import java.awt.*;
+
+import com.mysql.cj.protocol.Resultset;
 
 
 public class login extends JFrame implements ActionListener {
@@ -72,7 +76,25 @@ public class login extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource()==login){
+            try {
+                String username=tusername.getText();
+                String password=tpassword.getText();
+                conn conn=new conn();
 
+
+                String query="selet * from login where username ='"+username+"'and password ='"+password+"'";
+                Resultset resultset =conn.statement.executeQuery(query);
+                if(((ResultSet) resultset).next()){
+                    setVisible(false);
+                    new Main_class();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"Invalid username or password");
+                }
+                
+            } catch (Exception E) {
+                E.printStackTrace();
+            }
         }
         else{
             System.exit(74);
