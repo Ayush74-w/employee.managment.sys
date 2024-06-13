@@ -5,11 +5,8 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
-
 import javax.swing.*;
 import java.awt.*;
-
-import com.mysql.cj.protocol.Resultset;
 
 
 public class login extends JFrame implements ActionListener {
@@ -83,8 +80,8 @@ public class login extends JFrame implements ActionListener {
 
 
                 String query="selet * from login where username ='"+username+"'and password ='"+password+"'";
-                Resultset resultset =conn.statement.executeQuery(query);
-                if(((ResultSet) resultset).next()){
+                ResultSet resultset =conn.statement.executeQuery(query);
+                if(resultset.next()){
                     setVisible(false);
                     new Main_class();
                 }
