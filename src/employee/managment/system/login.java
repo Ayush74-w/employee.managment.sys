@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import javax.swing.*;
-import java.awt.*;
 
 
 public class login extends JFrame implements ActionListener {
@@ -79,7 +78,7 @@ public class login extends JFrame implements ActionListener {
                 conn conn=new conn();
 
 
-                String query="selet * from login where username ='"+username+"'and password ='"+password+"'";
+                String query="select * from login where username ='"+username+"'and password ='"+password+"'";
                 ResultSet resultset =conn.statement.executeQuery(query);
                 if(resultset.next()){
                     setVisible(false);
