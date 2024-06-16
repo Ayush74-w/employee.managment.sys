@@ -25,6 +25,7 @@ public class Main_class extends JFrame {
         add.setForeground(Color.white);
         add.setBackground(Color.BLACK);
        add.addActionListener(new ActionListener() {
+        @Override
         public void actionPerformed(ActionEvent e){
 
         }
@@ -36,6 +37,7 @@ public class Main_class extends JFrame {
         view.setForeground(Color.WHITE);
         view.setBackground(Color.BLACK);
         view.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e){
 
             }
@@ -47,6 +49,7 @@ public class Main_class extends JFrame {
         rem.setForeground(Color.WHITE);
         rem.setBackground(Color.BLACK);
         rem.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e){
                 
             }
