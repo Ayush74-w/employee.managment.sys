@@ -1,10 +1,14 @@
 package employee.managment.system;
 
 import javax.swing.*;
+
+import com.toedter.calendar.JDateChooser;
+
 import java.awt.*;
 
 public class AddEmployee extends JFrame {
-
+JTextField tname, tfname, tadress,tphone,taadhar,temail,tsalary,tdesignation;
+JDateChooser tdob;
     AddEmployee(){
         getContentPane().setBackground(new Color(163,255,188));
 
@@ -13,6 +17,36 @@ public class AddEmployee extends JFrame {
         heading.setBounds(320,30,500,50);
         heading.setFont(new Font("serif",Font.BOLD,25));
         add(heading);
+
+        JLabel name=new JLabel("Name");
+        name.setBounds(50,150,150,30);
+        name.setFont(new Font("SAN_SERIF",Font.BOLD,20));
+        add(name);
+        tname=new JTextField();
+        tname.setBounds(200,150,150,30);
+        tname.setBackground(new Color(177,252,197));
+        add(tname);
+
+        JLabel fname=new JLabel("Father's Name");
+        fname.setBounds(400,150,150,30);
+        fname.setFont(new Font("SANS_SERIF",Font.BOLD,20));
+        add(fname);
+        tfname=new JTextField();
+        tfname.setBounds(600,150,150,30);
+        tfname.setFont(new Font("SANS_SERIF",Font.BOLD,20));
+        tfname.setBackground(new Color(177,252,197));
+        add(tfname);
+
+        JLabel dob=new JLabel("Date Of Birth");
+        dob.setBounds(50,200,150,30);
+        dob.setFont(new Font("SANS_SERIF",Font.BOLD,20));
+        add(dob);
+
+        tdob=new JDateChooser();
+        tdob.setBounds(200,200,150,30);
+        tdob.setBackground(new Color(177,252,197));
+        add(tdob);
+            
         setSize(900,700);
         setLayout(null);
         setLocation(300,50);
