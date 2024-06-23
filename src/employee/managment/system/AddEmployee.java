@@ -46,6 +46,26 @@ JDateChooser tdob;
         tdob.setBounds(200,200,150,30);
         tdob.setBackground(new Color(177,252,197));
         add(tdob);
+        
+        JLabel salary=new JLabel("Salary");
+            salary.setBounds(400,200,150,30);
+            salary.setFont(new Font("SANS_SERIF",Font.BOLD,20));
+            add(salary);
+
+            tsalary=new JTextField();
+            tsalary.setBounds(600,200,150,30);
+            tsalary.setBackground(new Color(177,252,197));
+            add(tsalary);
+
+            JLabel address=new JLabel("Address");
+            address.setBounds(50,250,150,30);
+            address.setFont(new Font("SANS_SERIF",Font.BOLD,20));
+            add(address);
+
+            tadress=new JTextField();
+            tadress.setBounds(200,250,150,30);
+            tadress.setBackground(new Color(177,252,197));
+            add(tadress);
             
         setSize(900,700);
         setLayout(null);
@@ -55,7 +75,7 @@ JDateChooser tdob;
 
     }
         public static void main(String args[]){
-new AddEmployee();
+          new AddEmployee();
         }
 
 }
