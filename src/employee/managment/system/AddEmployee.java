@@ -67,6 +67,25 @@ JDateChooser tdob;
             tadress.setBackground(new Color(177,252,197));
             add(tadress);
             
+            JLabel phone=new JLabel("Phone");
+            phone.setBounds(400,250,150,30);
+            phone.setFont(new Font("SANS_SERIF",Font.BOLD,20));
+            add(phone);
+             
+            tphone=new JTextField();
+            tphone.setBounds(600,250,150,30);
+            tphone.setBackground(new Color(177,252,197));
+            add(tphone);
+
+            JLabel email=new JLabel("Email");
+            email.setBounds(50,300,150,30);
+            email.setFont(new Font("SANS_SERIF",Font.BOLD,20));
+            add(email);
+
+            temail=new JTextField();
+            temail.setBounds(200,300,150,30);
+            temail.setBackground(new Color(177,252,197));
+            add(temail);
         setSize(900,700);
         setLayout(null);
         setLocation(300,50);
