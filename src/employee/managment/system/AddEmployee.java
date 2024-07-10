@@ -9,6 +9,7 @@ import java.awt.*;
 public class AddEmployee extends JFrame {
 JTextField tname, tfname, tadress,tphone,taadhar,temail,tsalary,tdesignation;
 JDateChooser tdob;
+JComboBox Boxeducation;
     AddEmployee(){
         getContentPane().setBackground(new Color(163,255,188));
 
@@ -86,6 +87,17 @@ JDateChooser tdob;
             temail.setBounds(200,300,150,30);
             temail.setBackground(new Color(177,252,197));
             add(temail);
+
+            JLabel education=new JLabel("Highest Education");
+            education.setBounds(400,300,150,30);
+            education.setFont(new Font("SANS_SERIF",Font.BOLD,20));
+            add(education);
+
+            String items[]={"BBA","B.TECH","BCA","BA","BSC","B.COM","MBA","MCA","MTECH","MSC"} ;
+            Boxeducation=new JComboBox(items);
+            Boxeducation.setBackground(new Color(177,252,197));
+            Boxeducation.setBounds(600,300,150,30);
+            add(Boxeducation);
         setSize(900,700);
         setLayout(null);
         setLocation(300,50);
