@@ -1,15 +1,24 @@
 package employee.managment.system;
 
-import javax.swing.*;
+
 
 import com.toedter.calendar.JDateChooser;
-
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Random;
 
-public class AddEmployee extends JFrame {
+public class AddEmployee extends JFrame implements ActionListener{
+    Random ran=new Random();
+    int number=ran.nextInt(999999);
+
+
 JTextField tname, tfname, tadress,tphone,taadhar,temail,tsalary,tdesignation;
+JLabel tempid;
 JDateChooser tdob;
 JComboBox Boxeducation;
+JButton add,back;
     AddEmployee(){
         getContentPane().setBackground(new Color(163,255,188));
 
@@ -98,6 +107,55 @@ JComboBox Boxeducation;
             Boxeducation.setBackground(new Color(177,252,197));
             Boxeducation.setBounds(600,300,150,30);
             add(Boxeducation);
+
+            JLabel aadhar=new JLabel("Aadhar Number");
+            aadhar.setBounds(400,350,150,30);
+            aadhar.setFont(new Font("SANS_SERIF",Font.BOLD,20));
+            add( aadhar);
+
+            taadhar=new JTextField();
+            taadhar.setBounds(600,350,150,30);
+            taadhar.setBackground(new Color(177,252,197));
+            add(taadhar);
+
+            JLabel empid=new JLabel("Employee Id");
+            empid.setBounds(50,400,150,30);
+            empid.setFont(new Font("SANS_SERIF",Font.BOLD,20));
+            add( empid);
+
+            tempid=new JLabel(""+number);
+            tempid.setBounds(200,400,150,30);
+           tempid.setFont(new Font("SANS_SERIF",Font.BOLD,20));
+           tempid.setForeground(Color.RED);
+            add(tempid);
+
+
+            JLabel designation=new JLabel("Designation");
+            designation.setBounds(50,350,150,30);
+            designation.setFont(new Font("SANS_SERIF",Font.BOLD,20));
+            add(designation);
+
+            tdesignation=new JTextField();
+            tdesignation.setBounds(200,350,150,30);
+            tdesignation.setBackground(new Color(177,252,197));
+            add(tdesignation);
+
+
+            add=new JButton("ADD");
+            add.setBounds(450,550,150,40);
+            add.setBackground(Color.BLACK);
+            add.setForeground(Color.WHITE);
+            add.addActionListener(this);
+            add(add);
+
+            back=new JButton("BACK");
+            back.setBounds(250,550,150,40);
+            back.setBackground(Color.BLACK);
+            back.setForeground(Color.WHITE);
+            back.addActionListener(this);
+            add(back);
+
+
         setSize(900,700);
         setLayout(null);
         setLocation(300,50);
@@ -105,8 +163,40 @@ JComboBox Boxeducation;
 
 
     }
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource()==add){
+            String name=tname.getText();
+            String fname=tfname.getText() ;
+            String dob=((JTextField) tdob.getDateEditor().getUiComponent()).getText();
+            String salary=tsalary.getText();
+            String address=tadress.getText();
+            String addhar=taadhar.getText();
+            String phone=tphone.getText();
+            String email=temail.getText();
+            String education=(String)Boxeducation.getSelectedItem();
+            String designation=tdesignation.getText();
+            String empID=tempid.getText();
+
+            try{
+                conn c=new conn();
+                String query="insert into employee values('"+name+"','"+fname+"','"+dob+"','"+salary+"','"+address+"','"+phone+"','"+email+"','"+education+"','"+designation+"','"+addhar+"','"+empID+"')";
+                c.statement.executeUpdate(query);
+                JOptionPane.showMessageDialog(null,"Details added succesfully");
+                setVisible(false);
+                new Main_class();
+
+
+            }
+            catch(Exception E){
+               E .printStackTrace();
+            }
+
+
+        }
+    }
         public static void main(String args[]){
           new AddEmployee();
         }
+      
 
 }
