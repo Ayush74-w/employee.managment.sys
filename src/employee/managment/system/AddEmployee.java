@@ -193,6 +193,10 @@ JButton add,back;
 
 
         }
+        else{
+            setVisible(false);
+            new Main_class();
+        }
     }
         public static void main(String args[]){
           new AddEmployee();

@@ -27,7 +27,8 @@ public class Main_class extends JFrame {
        add.addActionListener(new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e){
-
+            new AddEmployee();
+            setVisible(false);
         }
        });
         img.add(add);
@@ -39,7 +40,8 @@ public class Main_class extends JFrame {
         view.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-
+                new View_Employee();
+                setVisible(false);
             }
         });
         img.add(view);
@@ -51,6 +53,7 @@ public class Main_class extends JFrame {
         rem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
+                new RemoveEmployee();
                 
             }
         });
